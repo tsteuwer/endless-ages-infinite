@@ -61,9 +61,6 @@ namespace UnityTemplateProjects
         [Tooltip("Exponential boost factor on translation, controllable by mouse wheel.")]
         public float boost = 3.5f;
 
-        [Tooltip("Mouse sensitivity rotation.")]
-        public float mouseSpeed = 60f;
-
         [Tooltip("Time it takes to interpolate camera position 99% of the way to the target."), Range(0.001f, 1f)]
         public float positionLerpTime = 0.2f;
 
@@ -190,7 +187,7 @@ namespace UnityTemplateProjects
             // Rotation
             if (IsCameraRotationAllowed())
             {
-                var mouseMovement = GetInputLookRotation() * Time.deltaTime * mouseSpeed;
+                var mouseMovement = GetInputLookRotation() * Time.deltaTime * 5;
                 if (invertY)
                     mouseMovement.y = -mouseMovement.y;
                 
